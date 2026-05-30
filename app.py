@@ -8,7 +8,6 @@ import pickle
 # ------------------------------------------------
 st.set_page_config(
     page_title="Stacking Regression",
-    page_icon="🏠",
     layout="wide"
 )
 
@@ -29,7 +28,7 @@ results = pickle.load(open("models/r2_results.pkl", "rb"))
 # Title
 # ------------------------------------------------
 st.markdown(
-    "<h1 class='main-title'>🏠 House Price Prediction App</h1>",
+    "<h1 class='main-title'>House Price Prediction App</h1>",
     unsafe_allow_html=True
 )
 
@@ -37,7 +36,7 @@ st.markdown(
     """
     <div class='info-box'>
     Predict the <b>House Price</b> based on property features
-    using <b>Stacking Ensemble Regression</b> 🚀
+    using <b>Stacking Ensemble Regression</b> 
     </div>
     """,
     unsafe_allow_html=True
@@ -62,7 +61,7 @@ st.sidebar.success("Dataset : Housing Price Prediction")
 # Performance Section
 # ------------------------------------------------
 st.markdown("---")
-st.subheader("📊 Model Performance Comparison (R² Score)")
+st.subheader("Model Performance Comparison (R² Score)")
 
 col_m1, col_m2, col_m3, col_m4, col_m5 = st.columns(5)
 
@@ -123,7 +122,7 @@ with col3:
 # ------------------------------------------------
 # Prediction
 # ------------------------------------------------
-if st.button("🎯 Predict House Price"):
+if st.button(" Predict House Price"):
 
     input_data = np.array([[
         area,
@@ -148,7 +147,7 @@ if st.button("🎯 Predict House Price"):
     st.markdown(
         f"""
         <div class='prediction-box'>
-            🏠 Estimated House Price
+            Estimated House Price
             <br><br>
             <span>${prediction:,.0f}</span>
             <br><br>
@@ -160,7 +159,7 @@ if st.button("🎯 Predict House Price"):
 
     # Individual base learner predictions
     st.markdown("---")
-    st.subheader("🗳️ Base Learner Price Estimates")
+    st.subheader(" Base Learner Price Estimates")
 
     vote_cols = st.columns(4)
     for col, (bname, bprice) in zip(vote_cols, base_preds.items()):
@@ -171,7 +170,7 @@ if st.button("🎯 Predict House Price"):
 # Feature Importance Info
 # ------------------------------------------------
 st.markdown("---")
-st.subheader("📖 Feature Descriptions")
+st.subheader(" Feature Descriptions")
 
 with st.expander("Area"):
     st.write("Total area of the house in square feet (500 – 5000 sq ft)")
@@ -204,7 +203,7 @@ with st.expander("Condition"):
 # How Stacking Works
 # ------------------------------------------------
 st.markdown("---")
-st.subheader("🧠 How Stacking Regression Works")
+st.subheader(" How Stacking Regression Works")
 
 st.markdown("""
 <div class='info-box'>
@@ -222,7 +221,7 @@ st.markdown(
     """
     <hr>
     <center>
-    <h4>✨ Built using Streamlit, Scikit-Learn & Stacking Ensemble ✨</h4>
+    <h4> Built using Streamlit, Scikit-Learn & Stacking Ensemble </h4>
     </center>
     """,
     unsafe_allow_html=True
